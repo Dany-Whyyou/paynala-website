@@ -3,7 +3,7 @@ import { CreditCard, Settings, Shield, ShoppingCart, Plane, Building2, Landmark 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-export default function Home() {
+export default function AgregationDePaiementsPage() {
   return (
       <div className="min-h-screen bg-white">
         {/* Header */}
