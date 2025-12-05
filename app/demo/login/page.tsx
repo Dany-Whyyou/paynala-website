@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, {FormEvent, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -10,7 +10,7 @@ export default function LoginPage() {
     });
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<{ name: string; value: string }>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -18,7 +18,7 @@ export default function LoginPage() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log('Login attempt:', formData);
     };

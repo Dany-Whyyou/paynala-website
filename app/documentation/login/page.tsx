@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, {FormEvent, useState} from 'react';
 import Link from 'next/link';
 
 export default function DocumentationLoginPage() {
@@ -8,7 +8,7 @@ export default function DocumentationLoginPage() {
         password: ''
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<{ name: string; value: string }>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -16,7 +16,7 @@ export default function DocumentationLoginPage() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log('Documentation login:', formData);
     };
@@ -103,7 +103,7 @@ export default function DocumentationLoginPage() {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3.5 rounded-lg transition-colors shadow-md hover:shadow-lg p-2"
+                        className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3.5 rounded-lg transition-colors shadow-md hover:shadow-lg p"
                     >
                         Se connecter
                     </button>

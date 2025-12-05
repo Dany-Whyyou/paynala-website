@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, {FormEvent, useState} from 'react';
 import Link from 'next/link';
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
@@ -66,7 +66,7 @@ export default function DemanderDemoPage() {
         'Autre'
     ];
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<{ name: string; value: string }>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -74,7 +74,7 @@ export default function DemanderDemoPage() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log('Demo request submitted:', formData);
     };

@@ -1,11 +1,19 @@
 'use client';
-import React, { useState } from 'react';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import Link from 'next/link';
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 
+interface FormData {
+    prenom: string;
+    nom: string;
+    email: string;
+    poste: string;
+    message: string;
+    cv: File | null;
+}
 export default function ContactPage() {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         prenom: '',
         nom: '',
         email: '',
@@ -14,7 +22,7 @@ export default function ContactPage() {
         cv: null
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<{ name: string; value: string }>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -22,14 +30,17 @@ export default function ContactPage() {
         }));
     };
 
-    const handleFileChange = (e) => {
+    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const { name, files } = e.target;
+        const file = files?.[0] || null;
+
         setFormData(prev => ({
             ...prev,
-            cv: e.target.files[0]
+            [name]: file
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
         // Ajoutez ici votre logique de soumission
@@ -162,7 +173,10 @@ export default function ContactPage() {
                                         <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clipRule="evenodd"/>
                                     </svg>
                                     <p className="text-red-600 font-medium mb-1">
-                                        {formData.cv ? formData.cv.name : 'Cliquez pour choisir un fichier ou glissez-déposez'}
+                                        {formData.cv && formData.cv.name
+                                            ? formData.cv.name
+                                            : 'Cliquez pour choisir un fichier ou glissez-déposez'}
+
                                     </p>
                                     <p className="text-sm text-gray-500">
                                         Formats acceptés : PDF, DOCX, DOCX (max. 5MB)

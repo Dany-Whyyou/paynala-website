@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, {FormEvent, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from "@/components/layout/Footer";
@@ -69,7 +69,7 @@ export default function RessourcesPage() {
         { name: 'Regulations', color: 'bg-purple-100 text-purple-700' }
     ];
 
-    const handleSubscribe = (e) => {
+    const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log('Subscribing email:', email);
         // Add subscription logic
@@ -77,7 +77,7 @@ export default function RessourcesPage() {
         setEmail('');
     };
 
-    const handleSearch = (e) => {
+    const handleSearch = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log('Searching for:', searchQuery);
     };

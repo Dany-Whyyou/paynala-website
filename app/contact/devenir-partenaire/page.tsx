@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, {FormEvent, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from "@/components/layout/Footer";
@@ -72,7 +72,7 @@ export default function DevenirPartenairePage() {
         }
     ];
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<{ name: string; value: string }>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -80,7 +80,7 @@ export default function DevenirPartenairePage() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
     };

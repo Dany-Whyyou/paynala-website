@@ -1,12 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React, {FormEvent, useState} from 'react';
 import Link from 'next/link';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export default function CentreAidePage() {
     const [searchQuery, setSearchQuery] = useState('');
-    const [openFaq, setOpenFaq] = useState(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     const categories = [
         {
@@ -85,11 +85,11 @@ export default function CentreAidePage() {
         }
     ];
 
-    const toggleFaq = (index) => {
+    const toggleFaq = (index: number) => {
         setOpenFaq(openFaq === index ? null : index);
     };
 
-    const handleSearch = (e) => {
+    const handleSearch = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // Implement search logic here
         console.log('Searching for:', searchQuery);
