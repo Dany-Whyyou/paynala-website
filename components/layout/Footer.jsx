@@ -1,10 +1,12 @@
+import React from "react";
+
 export default function Footer() {
     return (
         <footer className="bg-gray-50 border-t border-gray-200 py-12 px-4">
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-5 gap-8 mb-8">
                     <div>
-                        <div className="w-8 h-8 bg-green-700 rounded mb-4"></div>
+                        <div className="w-16 h-16 rounded mb-4"><img src="/paynala_logo.png" alt="paynala logo"/></div>
                         <p className="text-sm text-gray-600">
                             Transformer le paiement unifié pour l'Afrique
                         </p>
@@ -46,7 +48,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-200 pt-8 text-center text-sm text-gray-600">
-                    © 2024 Paynala. Tous droits réservés.
+                    © 2025 Paynala. Tous droits réservés.
                 </div>
             </div>
         </footer>
