@@ -135,7 +135,7 @@ export default function AssurancesSantePage() {
                                 <div className="bg-gradient-to-br from-gray-100 to-gray-200 aspect-[4/3] flex items-center justify-center">
                                     {/* Placeholder for payment illustration */}
                                     <Image
-                                        src="/payment-secure.jpg"
+                                        src="/2152001145.jpg"
                                         alt="Paiements sécurisés"
                                         fill
                                         className="object-cover"
@@ -172,7 +172,7 @@ export default function AssurancesSantePage() {
                                 <div className="bg-gradient-to-br from-gray-100 to-gray-200 aspect-[4/3] flex items-center justify-center">
                                     {/* Placeholder for recurring payment dashboard */}
                                     <Image
-                                        src="/recurring-dashboard.jpg"
+                                        src="/2151961282.jpg"
                                         alt="Automatisation des paiements"
                                         fill
                                         className="object-cover"
@@ -184,41 +184,18 @@ export default function AssurancesSantePage() {
                 </div>
             </section>
 
-            {/* Témoignage */}
-            <section className="py-16 bg-pink-50">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <div className="w-16 h-16 bg-gray-400 rounded-lg mb-6 mx-auto"></div>
-                        <blockquote className="text-xl md:text-2xl text-gray-900 font-medium mb-6 leading-relaxed">
-                            "Depuis notre collaboration avec Paynala, la collecte de nos primes
-                            a augmenté de 30%. Leur plateforme est non seulement fiable,
-                            mais aussi incroyablement simple à intégrer."
-                        </blockquote>
-                        <div>
-                            <p className="font-bold text-gray-900">Jean Dupont</p>
-                            <p className="text-gray-600 text-sm">Directeur Financier, Assurance Vie Afrique</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* CTA Section */}
-            <section className="py-16 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                        <div>
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                                Prêt à transformer vos paiements?
-                            </h2>
-                            <p className="text-gray-600">
-                                Nos experts sont disponibles pour vous accompagner dans votre transformation
-                                numérique dès aujourd'hui avec nos solutions
-                            </p>
-                        </div>
-                        <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 text-sm font-medium transition-all whitespace-nowrap flex-shrink-0">
-                            Contacter nos experts
-                        </button>
-                    </div>
+            <section className="py-20 px-4 bg-gray-50">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        Prêt à révolutionner vos paiements ?
+                    </h2>
+                    <p className="text-gray-600 mb-8">
+                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                    </p>
+                    <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
+                        Contacter nous
+                    </button>
                 </div>
             </section>
 

@@ -215,37 +215,18 @@ export default function RetailCommercePage() {
                 </div>
             </section>
 
-            {/* Testimonial Section */}
-            <section className="py-16 bg-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12 shadow-lg">
-                        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-                            {/* Avatar */}
-                            <div className="flex-shrink-0">
-                                <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
-                                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-
-                            {/* Testimonial Content */}
-                            <div className="flex-1">
-                                <svg className="w-8 h-8 text-gray-300 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                                </svg>
-                                <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-6 italic">
-                                    "L'intégration de Paynala a été un tournant pour notre chaîne de magasins.
-                                    Nous avons pu améliorer notre gestion de 20% de nos ventes en ligne et la facilité
-                                    d'utilisation a simplifié nos processus de paiement."
-                                </p>
-                                <div>
-                                    <p className="font-bold text-gray-900">Amina Diop</p>
-                                    <p className="text-gray-600 text-sm">CEO, LA BOUTIQUE TIMES</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            {/* CTA Section */}
+            <section className="py-20 px-4">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        Prêt à révolutionner vos paiements ?
+                    </h2>
+                    <p className="text-gray-600 mb-8">
+                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                    </p>
+                    <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
+                        Contacter nous
+                    </button>
                 </div>
             </section>
 

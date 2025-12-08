@@ -16,8 +16,8 @@ export default function EducationPage() {
                         <div>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                                 Solutions de paiement<br />
-                                pour le secteur de<br />
-                                l'éducation en Afrique
+                                pour le secteur de
+                                l'éducation
                             </h1>
                             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
                                 Modernisez la collecte des frais de scolarité et offrez la possibilité
@@ -32,7 +32,7 @@ export default function EducationPage() {
                                 {/* Replace with actual school image */}
                                 <div className="bg-gradient-to-br from-amber-100 to-amber-200 aspect-[4/3]">
                                     <Image
-                                        src="/school-building.jpg"
+                                        src="/63858.jpg"
                                         alt="École moderne en Afrique"
                                         fill
                                         className="object-cover"
@@ -217,17 +217,16 @@ export default function EducationPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-16 bg-gradient-to-br from-pink-50 to-red-50">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                        Prêt à transformer la gestion des paiements de votre établissement ?
+            <section className="py-20 px-4 bg-gray-50">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        Prêt à révolutionner vos paiements ?
                     </h2>
-                    <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-                        Contactez-nous aujourd'hui pour une démonstration personnalisée et découvrez
-                        comment nous pouvons optimiser vos processus de paiement
+                    <p className="text-gray-600 mb-8">
+                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
                     </p>
-                    <button className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 text-sm font-medium transition-all shadow-lg hover:shadow-xl">
-                        Contactez-nous
+                    <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
+                        Contacter nous
                     </button>
                 </div>
             </section>

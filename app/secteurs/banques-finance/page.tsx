@@ -30,15 +30,14 @@ export default function BanqueFinancePage() {
                     <div className="max-w-3xl">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                             Solutions de paiement pour le<br />
-                            secteur bancaire et financier en<br />
-                            Afrique
+                            secteur bancaire et financier
                         </h1>
                         <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
                             Donnez à vos clients une expérience de paiement fluide, sécurisée et transparente.
                             Intégrez nos solutions API à votre écosystème et accélérez votre transformation digitale.
                         </p>
                         <button className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 text-sm font-medium transition-all shadow-lg hover:shadow-xl">
-                            Demander une démo
+                            Demander un devis
                         </button>
                     </div>
                 </div>
@@ -251,17 +250,16 @@ export default function BanqueFinancePage() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-16 bg-gradient-to-br from-gray-900 to-slate-800 text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                        Prêt à moderniser vos services de paiement ?
+            <section className="py-20 px-4 bg-gray-50">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        Prêt à révolutionner vos paiements ?
                     </h2>
-                    <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-                        Contactez nos experts pour découvrir comment notre plateforme peut transformer votre
-                        infrastructure de paiement et améliorer l'expérience de vos clients.
+                    <p className="text-gray-600 mb-8">
+                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
                     </p>
-                    <button className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 text-sm font-medium transition-all shadow-lg hover:shadow-xl">
-                        Demander une démo
+                    <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
+                        Contacter nous
                     </button>
                 </div>
             </section>

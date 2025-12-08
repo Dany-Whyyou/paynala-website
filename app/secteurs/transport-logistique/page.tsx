@@ -13,15 +13,14 @@ export default function TransportLogistiquePage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                     Optimisez les paiements pour le<br />
-                    transport et la logistique en<br />
-                    Afrique
+                    transport et la logistique
                 </h1>
                 <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-8">
                     Découvrez comment l'automatisation des transactions transforme les opérations
                     des entreprises de transport et de logistique avec nos solutions de paiements intégrées
                 </p>
                 <button className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 text-sm font-medium">
-                    Parler à un expert
+                    Demander un devis
                 </button>
             </section>
 
@@ -158,52 +157,17 @@ export default function TransportLogistiquePage() {
                 </div>
             </section>
 
-            {/* Testimonial Section */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                    Nos réussites dans le secteur
-                </h2>
-                <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-                    <div className="flex items-start space-x-6">
-                        <div className="flex-shrink-0">
-                            <div className="w-16 h-16 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full"></div>
-                        </div>
-                        <div>
-                            <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                                "Paynala a transformé notre manière de gérer les paiements de nos chauffeurs.
-                                Les délais de règlement ont été réduits de moitié et nos équipes peuvent se
-                                concentrer sur la logistique plutôt que sur la gestion financière. Une solution
-                                indispensable !"
-                            </p>
-                            <div>
-                                <div className="font-bold text-gray-900">Amadou Sall</div>
-                                <div className="text-gray-600 text-sm">Directeur Général</div>
-                                <div className="flex items-center mt-2">
-                                    {[...Array(5)].map((_, i) => (
-                                        <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                        </svg>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* CTA Section */}
-            <section className="bg-gradient-to-r from-pink-50 to-purple-50 py-16">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                        Prêt à transformer les paiements de<br />
-                        votre entreprise ?
+            <section className="py-20 px-4 bg-gray-50">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        Prêt à révolutionner vos paiements ?
                     </h2>
-                    <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Contactez nos experts pour découvrir comment Paynala peut optimiser
-                        vos opérations de transport et logistique avec nos solutions de paiements intégrées
+                    <p className="text-gray-600 mb-8">
+                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
                     </p>
-                    <button className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 text-sm font-medium">
-                        Contactez-nous
+                    <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
+                        Contacter nous
                     </button>
                 </div>
             </section>

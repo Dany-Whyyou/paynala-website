@@ -28,7 +28,7 @@ export default function ServicesGouvernementauxPage() {
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
                     <div className="max-w-3xl">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            Moderniser les Services Publics<br />
+                            Moderniser les Services Publics
                             avec Paynala
                         </h1>
                         <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
@@ -201,80 +201,18 @@ export default function ServicesGouvernementauxPage() {
                 </div>
             </section>
 
-            {/* Trust Section */}
-            <section className="bg-gray-50 py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                        Nos réussites dans le secteur public
-                    </h2>
-                    <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-                        Nous aidons déjà plusieurs institutions publiques à transformer leurs services
-                        et à offrir une meilleure expérience aux citoyens
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {/* Case Study 1 */}
-                        <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-                            <div className="flex items-start mb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-teal-500 rounded-lg flex-shrink-0"></div>
-                                <div className="ml-4">
-                                    <h4 className="font-bold text-gray-900 text-lg mb-1">
-                                        Évolution vers la dématérialisation
-                                    </h4>
-                                </div>
-                            </div>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                En partenariat avec le Ministère de l'Éducation, nous avons
-                                digitalisé le paiement des frais scolaires, réduisant les files
-                                d'attente et améliorant la collecte des fonds
-                            </p>
-                            <a href="#" className="text-red-600 hover:text-red-700 text-sm font-medium inline-flex items-center">
-                                Lire la suite
-                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </a>
-                        </div>
-
-                        {/* Case Study 2 */}
-                        <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-                            <div className="flex items-start mb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex-shrink-0"></div>
-                                <div className="ml-4">
-                                    <h4 className="font-bold text-gray-900 text-lg mb-1">
-                                        Renforcer l'efficacité des PME, volet-clé de l'économie
-                                    </h4>
-                                </div>
-                            </div>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                Notre collaboration avec les administrations fiscales a permis
-                                de faciliter le paiement des taxes et impôts en ligne, améliorant
-                                la conformité et les recettes publiques
-                            </p>
-                            <a href="#" className="text-red-600 hover:text-red-700 text-sm font-medium inline-flex items-center">
-                                Lire la suite
-                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* CTA Section */}
-            <section className="bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white py-20">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Prêt à transformer vos services de<br />
-                        paiement public ?
+            <section className="py-20 px-4">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        Prêt à révolutionner vos paiements ?
                     </h2>
-                    <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-                        Découvrez comment Paynala peut aider votre institution à offrir
-                        des services modernes, efficaces et sécurisés aux citoyens
+                    <p className="text-gray-600 mb-8">
+                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
                     </p>
-                    <button className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 text-sm font-medium transition-all">
-                        Prendre un rendez-vous
+                    <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
+                        Contacter nous
                     </button>
                 </div>
             </section>

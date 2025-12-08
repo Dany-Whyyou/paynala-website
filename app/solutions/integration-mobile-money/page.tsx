@@ -2,6 +2,7 @@
 import { Rocket, Shield, Globe, FileText, Code, Play } from 'lucide-react';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import React from "react";
 export default function MobileMoneyPage() {
     return (
         <div className="min-h-screen bg-gray-50">
@@ -13,19 +14,14 @@ export default function MobileMoneyPage() {
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                                Intégration Mobile<br />Money Simplifiée
+                                Intégration Mobile Money en 48 heures
                             </h1>
                             <p className="text-lg text-gray-600 mb-8">
-                                Connectez-vous à l'écosystème de paiement mobile en Afrique.
-                                Acceptez les paiements de millions d'utilisateurs via une seule API
-                                robuste et sécurisée.
+                                Acceptez tous les opérateurs (Airtel Money, Moov Money...) via USSD et applications mobiles. Accès à plusieurs millions utilisateurs. Commission négociée.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <button className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 font-medium">
                                     Explorer la documentation
-                                </button>
-                                <button className="bg-white border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-full hover:bg-gray-50 font-medium">
-                                    Contacter les ventes
                                 </button>
                             </div>
                         </div>
@@ -186,20 +182,17 @@ export default function MobileMoneyPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 px-4">
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-red-50 rounded-3xl p-12 text-center">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                            Prêt à toucher des millions de clients ?
-                        </h2>
-                        <p className="text-gray-600 mb-8">
-                            Discutez avec nos experts pour intégrer le Mobile Money et débloquer un
-                            nouveau potentiel de croissance pour votre entreprise.
-                        </p>
-                        <button className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 font-medium">
-                            Commencer l'intégration
-                        </button>
-                    </div>
+            <section className="py-20 px-4 bg-gray-50">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        Prêt à révolutionner vos paiements ?
+                    </h2>
+                    <p className="text-gray-600 mb-8">
+                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                    </p>
+                    <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
+                        Contacter nous
+                    </button>
                 </div>
             </section>
 
