@@ -2,18 +2,10 @@
 import {
     Globe,
     Smartphone,
-    CreditCard,
-    Shield,
-    Clock,
-    Users,
-    Code,
-    Headphones,
-    TrendingUp,
-    CheckCircle
+    CreditCard
 } from 'lucide-react';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import React from "react";
 
 export default function Home() {
     const testimonials = [
@@ -41,25 +33,36 @@ export default function Home() {
         <div className="min-h-screen bg-gray-50">
             <Header/>
 
-            {/* Hero Section */}
-            <section className="bg-white py-20 px-4">
-                <div className="max-w-5xl mx-auto text-center">
-                    <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                        Accélérez votre transformation <br/>digitale avec PAYNALA
+            {/* Hero Section avec Image/Vidéo */}
+            <section className="hero-section">
+                {/* Image de fond (ou vidéo) */}
+                <img
+                    src="/images/hero-poster.webp"
+                    alt="Paynala - Paiements digitaux en Afrique"
+                    className="hero-video"
+                />
+
+                {/* Overlay sombre pour lisibilité du texte */}
+                <div className="hero-overlay"></div>
+
+                {/* Contenu centré sur l'image */}
+                <div className="hero-content max-w-5xl mx-auto text-center">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg">
+                        Accélérez votre transformation <br className="hidden sm:block"/>digitale avec PAYNALA
                     </h1>
-                    <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 md:mb-8 max-w-3xl mx-auto drop-shadow-md">
                         Paynala simplifie radicalement la digitalisation des paiements pour les entreprises et
                         gouvernements africains. Agrégation multi-opérateurs, TPE interopérable et intégration mobile
                         money en 48 heures.
                     </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
+                    <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                        <button className="bg-red-600 text-white px-6 sm:px-8 py-3 rounded-md hover:bg-red-700 font-medium transition-colors shadow-lg">
                             Découvrir nos solutions
                         </button>
                         {/*<button
-                  className="bg-white border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-md hover:bg-gray-50 font-medium">
-                Contacter les ventes
-              </button>*/}
+                            className="bg-white/15 backdrop-blur-sm border-2 border-white text-white px-6 sm:px-8 py-3 rounded-md hover:bg-white/25 font-medium transition-colors shadow-lg">
+                            Contacter les ventes
+                        </button>*/}
                     </div>
                 </div>
             </section>
