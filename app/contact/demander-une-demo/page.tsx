@@ -90,10 +90,10 @@ export default function DemanderDemoPage() {
                     {/* Left Column - Info */}
                     <div>
                         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                            Voyez Paynala en action : demandez votre démo personnalisée
+                            Voyez PAYNALA en action : demandez votre démo personnalisée
                         </h1>
                         <p className="text-lg text-gray-600 mb-12">
-                            Une opportunité sans engagement de découvrir comment Paynala peut résoudre vos défis de paiement spécifiques et optimiser vos opérations en Afrique.
+                            Une opportunité sans engagement de découvrir comment PAYNALA peut résoudre vos défis de paiement spécifiques et optimiser vos opérations en Afrique.
                         </p>
 
                         {/* Avantages */}

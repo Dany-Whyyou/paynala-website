@@ -82,13 +82,13 @@ export default function CarrieresPage() {
         {
             name: 'Jean-Pierre',
             role: 'Directeur Technique',
-            quote: 'Chez Paynala, je participe à résoudre une problématique majeure qui a un impact réel sur l\'économie du continent africain.',
+            quote: 'Chez PAYNALA, je participe à résoudre une problématique majeure qui a un impact réel sur l\'économie du continent africain.',
             image: '/images/team/jean-pierre-testimony.jpg'
         },
         {
             name: 'Amina Ndiaye',
             role: 'Cheffe de Produit',
-            quote: 'J\'ai rejoint Paynala car je souhaite contribuer à la transformation numérique de l\'Afrique.',
+            quote: 'J\'ai rejoint PAYNALA car je souhaite contribuer à la transformation numérique de l\'Afrique.',
             image: '/images/team/amina-testimony.jpg'
         }
     ];
@@ -163,7 +163,7 @@ export default function CarrieresPage() {
                             Pourquoi nous rejoindre ?
                         </h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            En rejoignant Paynala, vous contribuerez à un projet qui va au-delà de la simple
+                            En rejoignant PAYNALA, vous contribuerez à un projet qui va au-delà de la simple
                             technologie. Vous aurez un rôle crucial dans la croissance et l'innovation de la
                             fintech africaine.
                         </p>
@@ -191,7 +191,7 @@ export default function CarrieresPage() {
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-4xl font-bold text-gray-900 text-center mb-16">
-                        Avantages de travailler chez Paynala
+                        Avantages de travailler chez PAYNALA
                     </h2>
 
                     <div className="grid md:grid-cols-4 gap-6">

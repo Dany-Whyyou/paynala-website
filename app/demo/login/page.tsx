@@ -95,7 +95,7 @@ export default function LoginPage() {
                     {/* Logo */}
                     <div className="flex items-center space-x-2 mb-8">
                         <div className="w-8 h-8 bg-red-600 rounded"></div>
-                        <span className="text-2xl font-bold text-gray-900">Paynala</span>
+                        <span className="text-2xl font-bold text-gray-900">PAYNALA</span>
                     </div>
 
                     {/* Title */}

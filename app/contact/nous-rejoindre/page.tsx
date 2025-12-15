@@ -57,7 +57,7 @@ export default function ContactPage() {
                     {/* Title Section */}
                     <div className="text-center mb-12">
                         <h1 className="text-5xl font-bold text-gray-900 mb-4">
-                            Rejoignez l'aventure Paynala
+                            Rejoignez l'aventure PAYNALA
                         </h1>
                         <p className="text-lg text-gray-600">
                             Façonnez avec nous l'avenir de la fintech en Afrique. Nous sommes toujours à la recherche

@@ -11,7 +11,7 @@ export default function Header() {
             name: 'Solutions',
             items: [
                 { name: 'Agrégation de Paiements', href: '/solutions/agregation-de-paiements' },
-                { name: 'Terminaux de Paiement (TPE)', href: '/solutions/terminaux-de-paiement' },
+                /*{ name: 'Terminaux de Paiement (TPE)', href: '/solutions/terminaux-de-paiement' },*/
                 { name: 'Intégration Mobile Money', href: '/solutions/integration-mobile-money' }
             ]
         },
@@ -100,12 +100,12 @@ export default function Header() {
                 pointer-events: auto;
               }
 
-              .menu-group:nth-child(1) .dropdown-menu { left: calc(50% - 390px); }
-              .menu-group:nth-child(2) .dropdown-menu { left: calc(50% - 300px); }
-              .menu-group:nth-child(3) .dropdown-menu { left: calc(50% - 160px); }
-              .menu-group:nth-child(4) .dropdown-menu { left: calc(50% - 25px); }
-              .menu-group:nth-child(5) .dropdown-menu { left: calc(50% + 120px); }
-              .menu-group:nth-child(6) .dropdown-menu { left: calc(50% + 278px); }
+              .menu-group:nth-child(1) .dropdown-menu { left: calc(50% - 450px); }
+              .menu-group:nth-child(2) .dropdown-menu { left: calc(50% - 240px); }
+              .menu-group:nth-child(3) .dropdown-menu { left: calc(50% - 130px); }
+              .menu-group:nth-child(4) .dropdown-menu { left: calc(50% - 23px); }
+              .menu-group:nth-child(5) .dropdown-menu { left: calc(50% + 95px); }
+              .menu-group:nth-child(6) .dropdown-menu { left: calc(50% + 222px); }
 
               /* Mobile menu animation */
               .mobile-menu {
@@ -136,9 +136,9 @@ export default function Header() {
                         <div className="flex items-center">
                             <a href="/" className="flex items-center space-x-2">
                                 <div className="w-8 h-8 rounded">
-                                    <img src="/paynala_logo.png" alt="paynala logo" className="w-full h-full object-contain" />
+                                    <img src="/paynala_logo_sans.png" alt="paynala logo" className="w-full h-full object-contain" />
                                 </div>
-                                <span className="text-xl font-bold text-gray-900">Paynala</span>
+                                <span className="text-xl font-bold text-gray-900"><span style={{color: "rgb(248, 194, 42)"}}>Pay</span><span style={{color: "rgb(215, 34, 41)"}}>nala</span></span>
                             </a>
                         </div>
 
@@ -148,8 +148,8 @@ export default function Header() {
                                 <div key={menu.name} className="menu-group">
                                     {menu.items.length > 0 ? (
                                         <>
-                                            <button className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-50 flex items-center space-x-1 text-[16px] uppercase font-medium">
-                                                <span className="text-[16px]">{menu.name}</span>
+                                            <button className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-50 flex items-center space-x-1 text-[14px] capitalize font-medium">
+                                                <span className="text-[14px]">{menu.name}</span>
                                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                                 </svg>
@@ -170,9 +170,9 @@ export default function Header() {
                                     ) : (
                                         <a
                                             href={menu.href}
-                                            className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-50 text-[16px] uppercase font-medium flex items-center space-x-1"
+                                            className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-50 text-[14px] capitalize font-medium flex items-center space-x-1"
                                         >
-                                            <span className="text-[16px]">{menu.name}</span>
+                                            <span className="text-[14px]">{menu.name}</span>
                                         </a>
                                     )}
                                 </div>
@@ -182,10 +182,10 @@ export default function Header() {
                         {/* Desktop CTA Button */}
                         <div className="hidden lg:flex items-center ml-12">
                             <a
-                                href="/contact/demander-une-demo"
+                                href="/contact/devenir-partenaire"
                                 className="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 text-sm font-medium transition-colors"
                             >
-                                Demander une démo
+                                Contactez-nous
                             </a>
                         </div>
 
@@ -261,11 +261,11 @@ export default function Header() {
                         {/* Mobile CTA Button */}
                         <div className="pt-4 pb-2">
                             <a
-                                href="/contact/demander-une-demo"
+                                href="/contact/devenir-partenaire"
                                 className="block w-full text-center bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 text-sm font-medium transition-colors"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
-                                Demander une démo
+                                Contactez-nous
                             </a>
                         </div>
                     </div>

@@ -53,7 +53,7 @@ export default function CentreAidePage() {
                 </svg>
             ),
             title: 'Démarrer',
-            description: 'Premiers pas avec votre compte Paynala.'
+            description: 'Premiers pas avec votre compte PAYNALA.'
         },
         {
             icon: (
@@ -106,7 +106,7 @@ export default function CentreAidePage() {
                         Comment pouvons-nous vous aider ?
                     </h1>
                     <p className="text-lg text-gray-200 mb-10">
-                        Trouvez des réponses, des guides et des articles pour tirer parti de Paynala.
+                        Trouvez des réponses, des guides et des articles pour tirer parti de PAYNALA.
                     </p>
 
                     {/* Search Bar */}

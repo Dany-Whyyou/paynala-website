@@ -30,7 +30,7 @@ export default function EtudesDeCasPage() {
             id: 3,
             category: 'FINTECH',
             title: 'Flutterwave Inc.',
-            description: 'Expansion des capacités de transfert transfrontalier avec LABS Paynala.',
+            description: 'Expansion des capacités de transfert transfrontalier avec LABS PAYNALA.',
             gradient: 'from-teal-400 to-cyan-200',
             link: '#'
         },
@@ -73,7 +73,7 @@ export default function EtudesDeCasPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                         Découvrez comment nos clients<br />
-                        réussissent avec Paynala
+                        réussissent avec PAYNALA
                     </h1>
                     <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                         Explorez comment les entreprises africaines, des startups aux grandes organisations, optimisent leurs
@@ -166,7 +166,7 @@ export default function EtudesDeCasPage() {
                         Prêt à optimiser vos paiements ?
                     </h2>
                     <p className="text-lg text-gray-600 mb-8">
-                        Discutez avec l'un de nos experts pour découvrir comment Paynala peut transformer votre entreprise.
+                        Discutez avec l'un de nos experts pour découvrir comment PAYNALA peut transformer votre entreprise.
                     </p>
                     <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 text-sm font-medium transition-all">
                         Parlez à un expert

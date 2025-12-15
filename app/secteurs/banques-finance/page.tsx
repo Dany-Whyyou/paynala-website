@@ -211,7 +211,7 @@ export default function BanqueFinancePage() {
                         <div className="bg-gray-50 p-8 rounded-xl">
                             <div className="w-16 h-16 bg-gray-300 rounded-lg mb-6 mx-auto"></div>
                             <p className="text-gray-700 text-sm italic mb-6 text-center leading-relaxed">
-                                "Grâce à Paynala, nous avons modernisé notre infrastructure de paiement en quelques
+                                "Grâce à PAYNALA, nous avons modernisé notre infrastructure de paiement en quelques
                                 semaines. La transition a été fluide et nos clients sont ravis."
                             </p>
                             <div className="text-center">
@@ -224,7 +224,7 @@ export default function BanqueFinancePage() {
                         <div className="bg-gray-50 p-8 rounded-xl">
                             <div className="w-16 h-16 bg-gray-300 rounded-lg mb-6 mx-auto"></div>
                             <p className="text-gray-700 text-sm italic mb-6 text-center leading-relaxed">
-                                "L'API de Paynala est robuste et bien documentée. Nous avons intégré plusieurs
+                                "L'API de PAYNALA est robuste et bien documentée. Nous avons intégré plusieurs
                                 moyens de paiement en quelques jours seulement."
                             </p>
                             <div className="text-center">
@@ -237,7 +237,7 @@ export default function BanqueFinancePage() {
                         <div className="bg-gray-50 p-8 rounded-xl">
                             <div className="w-16 h-16 bg-gray-300 rounded-lg mb-6 mx-auto"></div>
                             <p className="text-gray-700 text-sm italic mb-6 text-center leading-relaxed">
-                                "La sécurité et la conformité sont au cœur de nos préoccupations. Paynala nous
+                                "La sécurité et la conformité sont au cœur de nos préoccupations. PAYNALA nous
                                 offre une tranquillité d'esprit totale."
                             </p>
                             <div className="text-center">
@@ -256,7 +256,7 @@ export default function BanqueFinancePage() {
                         Prêt à révolutionner vos paiements ?
                     </h2>
                     <p className="text-gray-600 mb-8">
-                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                        Rejoignez les entreprises et Institutions qui ont choisi PAYNALA pour simplifier et sécuriser leurs transactions digitales.
                     </p>
                     <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
                         Contacter nous

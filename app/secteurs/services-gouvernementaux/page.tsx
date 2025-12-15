@@ -29,10 +29,10 @@ export default function ServicesGouvernementauxPage() {
                     <div className="max-w-3xl">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                             Moderniser les Services Publics
-                            avec Paynala
+                            avec PAYNALA
                         </h1>
                         <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-                            Paynala aide les gouvernements et les institutions publiques à digitaliser leurs services
+                            PAYNALA aide les gouvernements et les institutions publiques à digitaliser leurs services
                             et à offrir aux citoyens une expérience de paiement fluide, rapide et sécurisée
                         </p>
                         <button className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 text-sm font-medium transition-all">
@@ -209,7 +209,7 @@ export default function ServicesGouvernementauxPage() {
                         Prêt à révolutionner vos paiements ?
                     </h2>
                     <p className="text-gray-600 mb-8">
-                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                        Rejoignez les entreprises et Institutions qui ont choisi PAYNALA pour simplifier et sécuriser leurs transactions digitales.
                     </p>
                     <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
                         Contacter nous

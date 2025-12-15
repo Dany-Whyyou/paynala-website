@@ -72,7 +72,7 @@ export default function RetailCommercePage() {
                             Relevez les défis du commerce moderne
                         </h2>
                         <p className="text-gray-600 max-w-3xl mx-auto">
-                            Paynala transforme les défis du secteur retail en opportunités de croissance et d'innovation
+                            PAYNALA transforme les défis du secteur retail en opportunités de croissance et d'innovation
                         </p>
                     </div>
 
@@ -222,7 +222,7 @@ export default function RetailCommercePage() {
                         Prêt à révolutionner vos paiements ?
                     </h2>
                     <p className="text-gray-600 mb-8">
-                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                        Rejoignez les entreprises et Institutions qui ont choisi PAYNALA pour simplifier et sécuriser leurs transactions digitales.
                     </p>
                     <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
                         Contacter nous

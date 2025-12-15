@@ -105,12 +105,12 @@ export default function EducationPage() {
                 </div>
             </section>
 
-            {/* Comment Paynala Simplifie Section */}
+            {/* Comment PAYNALA Simplifie Section */}
             <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Comment Paynala simplifie les paiements pour votre institution
+                            Comment PAYNALA simplifie les paiements pour votre institution
                         </h2>
                     </div>
 
@@ -223,7 +223,7 @@ export default function EducationPage() {
                         Prêt à révolutionner vos paiements ?
                     </h2>
                     <p className="text-gray-600 mb-8">
-                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                        Rejoignez les entreprises et Institutions qui ont choisi PAYNALA pour simplifier et sécuriser leurs transactions digitales.
                     </p>
                     <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
                         Contacter nous

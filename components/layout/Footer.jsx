@@ -6,13 +6,10 @@ export default function Footer() {
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-5 gap-8 mb-8">
                     <div>
-                        <div className="w-16 h-16 rounded mb-4"><img src="/paynala_logo.png" alt="paynala logo"/></div>
-                        <p className="text-sm text-gray-600">
-                            Paynala est la plateforme de paiement qui transforme l'Afrique. Solutions d'agrégation, TPE interopérable et Mobile Money pour entreprises et gouvernements.
-                            <br/><br/>
-                            Société Anonyme Simplifiée <br/>
-                            Capital : 10 000 000 FCFA <br/>
-                            Libreville, Gabon
+                        <div className="w-40 h-40 rounded mb-4"><img src="/paynala_logo.png" alt="paynala logo"/></div>
+                        <p className="text-[12px] text-gray-600 " style={{fontSize: "12px"}}>
+                            PAYNALA est la plateforme de paiement qui transforme l'Afrique. Solutions d'agrégation, TPE interopérable et Mobile Money pour entreprises et gouvernements.
+                        
                         </p>
 
 
@@ -66,7 +63,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-200 pt-8 text-center text-sm text-gray-600">
-                    © 2025 Paynala. Tous droits réservés. <br/>
+                    © 2025 PAYNALA. Tous droits réservés. <br/>
                     Mentions légales • Politique de confidentialité • Conditions générales • Politique de cookies
                 </div>
             </div>

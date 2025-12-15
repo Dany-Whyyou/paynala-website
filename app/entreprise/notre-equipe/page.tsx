@@ -10,7 +10,7 @@ export default function NotreEquipePage() {
         {
             name: 'Jean-Pierre Diallo',
             position: 'Président - Directeur Général',
-            description: 'Avec plus de 20 ans d\'expérience dans la finance, Jean-Pierre dirige la vision stratégique de Paynala.',
+            description: 'Avec plus de 20 ans d\'expérience dans la finance, Jean-Pierre dirige la vision stratégique de PAYNALA.',
             image: '/images/team/jean-pierre.jpg',
             bgColor: 'bg-amber-700'
         },

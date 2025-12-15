@@ -92,7 +92,7 @@ export default function RessourcesPage() {
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Ressources
                     </h1>
-                    <p className="text-red-600 text-lg">Paynala Blog</p>
+                    <p className="text-red-600 text-lg">PAYNALA Blog</p>
                 </div>
             </section>
 
@@ -255,7 +255,7 @@ export default function RessourcesPage() {
                                     Subscribe to our Newsletter
                                 </h3>
                                 <p className="text-sm text-gray-600 mb-4">
-                                    Get the latest insights from the Paynala team directly in your inbox.
+                                    Get the latest insights from the PAYNALA team directly in your inbox.
                                 </p>
                                 <form onSubmit={handleSubscribe}>
                                     <input

@@ -118,10 +118,10 @@ export default function DevenirPartenairePage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                            Les avantages d'un partenariat avec Paynala
+                            Les avantages d'un partenariat avec PAYNALA
                         </h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            En vous associant à Paynala, vous accédez à une plateforme robuste, un support expert et de nouvelles opportunités de revenus pour accélérer votre croissance.
+                            En vous associant à PAYNALA, vous accédez à une plateforme robuste, un support expert et de nouvelles opportunités de revenus pour accélérer votre croissance.
                         </p>
                     </div>
 

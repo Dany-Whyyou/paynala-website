@@ -97,7 +97,7 @@ export default function TransportLogistiquePage() {
                         Nos solutions pour la logistique
                     </h2>
                     <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-                        Paynala offre des solutions de paiement intégrées qui simplifient vos opérations
+                        PAYNALA offre des solutions de paiement intégrées qui simplifient vos opérations
                         et optimisent vos flux de trésorerie dans le secteur du transport et de la logistique
                     </p>
 
@@ -128,7 +128,7 @@ export default function TransportLogistiquePage() {
                                     Facilitez vos transactions internationales
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed">
-                                    Paynala vous permet d'accepter les paiements locaux et internationaux
+                                    PAYNALA vous permet d'accepter les paiements locaux et internationaux
                                     via une plateforme unique et sécurisée. Simplifiez vos opérations transfrontalières
                                     et réduisez vos délais de traitement pour une meilleure efficacité
                                 </p>
@@ -164,7 +164,7 @@ export default function TransportLogistiquePage() {
                         Prêt à révolutionner vos paiements ?
                     </h2>
                     <p className="text-gray-600 mb-8">
-                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                        Rejoignez les entreprises et Institutions qui ont choisi PAYNALA pour simplifier et sécuriser leurs transactions digitales.
                     </p>
                     <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
                         Contacter nous

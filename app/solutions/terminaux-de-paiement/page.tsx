@@ -108,7 +108,7 @@ export default function TerminalsPage() {
                                 Un seul terminal pour tout
                             </h2>
                             <p className="text-gray-600 mb-6">
-                                Le TPE Paynala remplace tous ces équipements par un terminal unique interopérable :
+                                Le TPE PAYNALA remplace tous ces équipements par un terminal unique interopérable :
                             </p>
                             <ul className="space-y-3">
                                 <li className="flex items-start">
@@ -169,12 +169,12 @@ export default function TerminalsPage() {
                 </div>
             </section>
 
-            {/* Why Choose Paynala */}
+            {/* Why Choose PAYNALA */}
             {/*<section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                            Pourquoi Choisir Paynala ?
+                            Pourquoi Choisir PAYNALA ?
                         </h2>
                         <p className="text-gray-600 max-w-2xl mx-auto">
                             Nos solutions sont conçues pour offrir sécurité, flexibilité et une gestion simplifiée de
@@ -330,7 +330,7 @@ export default function TerminalsPage() {
                             Prêt à simplifier vos paiements ?
                         </h2>
                         <p className="text-gray-600 mb-8">
-                            Contactez nos experts pour une démonstration personnalisée et découvrez comment Paynala peut
+                            Contactez nos experts pour une démonstration personnalisée et découvrez comment PAYNALA peut
                             transformer votre activité.
                         </p>
                         <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
@@ -348,7 +348,7 @@ export default function TerminalsPage() {
                         Prêt à révolutionner vos paiements ?
                     </h2>
                     <p className="text-gray-600 mb-8">
-                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                        Rejoignez les entreprises et Institutions qui ont choisi PAYNALA pour simplifier et sécuriser leurs transactions digitales.
                     </p>
                     <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
                         Contacter nous

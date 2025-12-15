@@ -6,26 +6,131 @@ import {
 } from 'lucide-react';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { useRef, useState, useEffect } from 'react';
 
 export default function Home() {
+    // Logo slider drag functionality
+    const sliderRef = useRef<HTMLDivElement>(null);
+    const trackRef = useRef<HTMLDivElement>(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    useEffect(() => {
+        const slider = sliderRef.current;
+        const track = trackRef.current;
+        if (!slider || !track) return;
+
+        let animationOffset = 0;
+        let animationId: number;
+        let lastTime = performance.now();
+
+        const animate = (currentTime: number) => {
+            if (!isDragging) {
+                const deltaTime = currentTime - lastTime;
+                animationOffset -= deltaTime * 0.03; // Vitesse du défilement auto
+
+                const trackWidth = track.scrollWidth / 2;
+                if (Math.abs(animationOffset) >= trackWidth) {
+                    animationOffset = 0;
+                }
+
+                track.style.transform = `translateX(${animationOffset}px)`;
+            }
+            lastTime = currentTime;
+            animationId = requestAnimationFrame(animate);
+        };
+
+        animationId = requestAnimationFrame(animate);
+
+        const handleTouchStart = (e: TouchEvent) => {
+            setIsDragging(true);
+            setStartX(e.touches[0].pageX);
+            const transform = track.style.transform;
+            const match = transform.match(/translateX\((.*)px\)/);
+            setScrollLeft(match ? parseFloat(match[1]) : 0);
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.touches[0].pageX;
+            const walk = (x - startX) * 1.5;
+            animationOffset = scrollLeft + walk;
+            track.style.transform = `translateX(${animationOffset}px)`;
+        };
+
+        const handleTouchEnd = () => {
+            setIsDragging(false);
+        };
+
+        const handleMouseDown = (e: MouseEvent) => {
+            setIsDragging(true);
+            setStartX(e.pageX);
+            const transform = track.style.transform;
+            const match = transform.match(/translateX\((.*)px\)/);
+            setScrollLeft(match ? parseFloat(match[1]) : 0);
+            slider.style.cursor = 'grabbing';
+        };
+
+        const handleMouseMove = (e: MouseEvent) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX;
+            const walk = (x - startX) * 1.5;
+            animationOffset = scrollLeft + walk;
+            track.style.transform = `translateX(${animationOffset}px)`;
+        };
+
+        const handleMouseUp = () => {
+            setIsDragging(false);
+            slider.style.cursor = 'grab';
+        };
+
+        const handleMouseLeave = () => {
+            if (isDragging) {
+                setIsDragging(false);
+                slider.style.cursor = 'grab';
+            }
+        };
+
+        slider.addEventListener('touchstart', handleTouchStart, { passive: true });
+        slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+        slider.addEventListener('touchend', handleTouchEnd);
+        slider.addEventListener('mousedown', handleMouseDown);
+        slider.addEventListener('mousemove', handleMouseMove);
+        slider.addEventListener('mouseup', handleMouseUp);
+        slider.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+            cancelAnimationFrame(animationId);
+            slider.removeEventListener('touchstart', handleTouchStart);
+            slider.removeEventListener('touchmove', handleTouchMove);
+            slider.removeEventListener('touchend', handleTouchEnd);
+            slider.removeEventListener('mousedown', handleMouseDown);
+            slider.removeEventListener('mousemove', handleMouseMove);
+            slider.removeEventListener('mouseup', handleMouseUp);
+            slider.removeEventListener('mouseleave', handleMouseLeave);
+        };
+    }, [isDragging, startX, scrollLeft]);
     const testimonials = [
         {
             id: 1,
             name: "SM MBOLO",
             position: "Supermarché , Secteur Retail",
-            text: "Avant Paynala, nous avions 4 terminaux différents à chaque caisse. Aujourd'hui, un seul terminal gère tout. Nos caissiers sont plus efficaces et nos clients apprécient la flexibilité de paiement. Un gain de temps considérable."
+            text: "Avant PAYNALA, nous avions 4 terminaux différents à chaque caisse. Aujourd'hui, un seul terminal gère tout. Nos caissiers sont plus efficaces et nos clients apprécient la flexibilité de paiement. Un gain de temps considérable."
         },
         {
             id: 2,
             name: "EN",
             position: "École Nationale Supérieure, Secteur Éducation",
-            text: "Grâce à la solution d'agrégation de paiements Paynala, nous avons digitalisé l'encaissement des frais de scolarité. Les parents peuvent désormais payer à distance via Mobile Money. Cette solution a considérablement amélioré notre gestion administrative et réduit les files d'attente."
+            text: "Grâce à la solution d'agrégation de paiements PAYNALA, nous avons digitalisé l'encaissement des frais de scolarité. Les parents peuvent désormais payer à distance via Mobile Money. Cette solution a considérablement amélioré notre gestion administrative et réduit les files d'attente."
         },
         {
             id: 3,
             name: "OV",
             position: "Omed Voyage, Agence de voyage",
-            text: "L'intégration des APIs Paynala dans notre système de réservation a été rapide et fluide. Nos clients peuvent désormais réserver et payer leurs billets en ligne en toute simplicité via différents canaux de paiement. Un vrai atout pour notre activité."
+            text: "L'intégration des APIs PAYNALA dans notre système de réservation a été rapide et fluide. Nos clients peuvent désormais réserver et payer leurs billets en ligne en toute simplicité via différents canaux de paiement. Un vrai atout pour notre activité."
         }
     ];
 
@@ -33,14 +138,20 @@ export default function Home() {
         <div className="min-h-screen bg-gray-50">
             <Header/>
 
-            {/* Hero Section avec Image/Vidéo */}
+            {/* Hero Section avec Vidéo */}
             <section className="hero-section">
-                {/* Image de fond (ou vidéo) */}
-                <img
-                    src="/images/hero-poster.webp"
-                    alt="Paynala - Paiements digitaux en Afrique"
+                {/* Vidéo de fond */}
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                     className="hero-video"
-                />
+                    poster="/images/hero-poster.webp"
+                >
+                    <source src="/videos/paynala.webm" type="video/webm" />
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
 
                 {/* Overlay sombre pour lisibilité du texte */}
                 <div className="hero-overlay"></div>
@@ -51,7 +162,7 @@ export default function Home() {
                         Accélérez votre transformation <br className="hidden sm:block"/>digitale avec PAYNALA
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 md:mb-8 max-w-3xl mx-auto drop-shadow-md">
-                        Paynala simplifie radicalement la digitalisation des paiements pour les entreprises et
+                        PAYNALA simplifie radicalement la digitalisation des paiements pour les entreprises et
                         gouvernements africains. Agrégation multi-opérateurs, TPE interopérable et intégration mobile
                         money en 48 heures.
                     </p>
@@ -92,15 +203,16 @@ export default function Home() {
             </section>*/}
 
             {/* Logos Section */}
-            <section className="py-12 px-4 bg-white">
+            <section className="py-12 px-4 bg-white overflow-hidden">
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-center text-4xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-center text-4xl font-bold text-gray-900 mb-8">
                         Ils nous font confiance
                     </h2>
-                    <br/>
-                    <div className="flex flex-wrap justify-center items-center gap-8 opacity-100">
+
+                    {/* Desktop: Flex wrap */}
+                    <div className="hidden md:flex flex-wrap justify-center items-center gap-8">
                         <div className="h-20 w-auto rounded-lg overflow-hidden">
-                            <img src="/partenanaires/airtel-Money.jpg" className="h-full w-auto object-contain"  alt="" />
+                            <img src="/partenanaires/airtel-Money.jpg" className="h-full w-auto object-contain" alt="" />
                         </div>
                         <div className="h-20 w-auto rounded-lg overflow-hidden">
                             <img src="/partenanaires/beac.jpeg" className="h-full w-auto object-contain" alt=""/>
@@ -124,7 +236,92 @@ export default function Home() {
                             <img src="/partenanaires/omed.png" className="h-full w-auto object-contain" alt=""/>
                         </div>
                     </div>
+
+                    {/* Mobile: Auto-scroll + Interactive slider */}
+                    <div className="md:hidden relative">
+                        <div ref={sliderRef} className="logos-slider-auto overflow-hidden" style={{ cursor: 'grab' }}>
+                            <div ref={trackRef} className="logos-track-auto">
+                                {/* Premier groupe */}
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/airtel-Money.jpg" className="h-16 w-auto object-contain" alt="" />
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/beac.jpeg" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/cma-cgm.jpeg" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/cnou.jpg" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/ENS-Logo1.jpg" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/gimac.png" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/moov.webp" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/omed.png" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                {/* Duplication pour effet infini */}
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/airtel-Money.jpg" className="h-16 w-auto object-contain" alt="" />
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/beac.jpeg" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/cma-cgm.jpeg" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/cnou.jpg" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/ENS-Logo1.jpg" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/gimac.png" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/moov.webp" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                                <div className="logo-item-auto">
+                                    <img src="/partenanaires/omed.png" className="h-16 w-auto object-contain" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <style jsx>{`
+                    .logos-slider-auto {
+                        width: 100%;
+                        user-select: none;
+                        -webkit-user-select: none;
+                    }
+
+                    .logos-track-auto {
+                        display: flex;
+                        width: max-content;
+                    }
+
+                    .logo-item-auto {
+                        flex-shrink: 0;
+                        padding: 0 1.25rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        pointer-events: none;
+                    }
+
+                    .logo-item-auto img {
+                        pointer-events: none;
+                        -webkit-user-drag: none;
+                    }
+                `}</style>
             </section>
 
             {/* Solutions Section */}
@@ -380,12 +577,12 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Why Paynala Section */}
+            {/* Why PAYNALA Section */}
             <section className="py-20 px-4 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                            Pourquoi choisir Paynala ?
+                            Pourquoi choisir PAYNALA ?
                         </h2>
                         <p className="text-gray-600 max-w-2xl mx-auto">
                             Une solution pensée pour les entreprises et les administrations africaines.
@@ -611,7 +808,7 @@ export default function Home() {
             <section className="py-16 bg-white overflow-hidden">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                        Ils ont transformé leurs paiements avec Paynala
+                        Ils ont transformé leurs paiements avec PAYNALA
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto"></p>
                 </div>
@@ -689,11 +886,11 @@ export default function Home() {
                         Prêt à révolutionner vos paiements ?
                     </h2>
                     <p className="text-gray-600 mb-8">
-                        Rejoignez les entreprises et Institutions qui ont choisi Paynala pour simplifier et sécuriser leurs transactions digitales.
+                        Rejoignez les entreprises et Institutions qui ont choisi PAYNALA pour simplifier et sécuriser leurs transactions digitales.
                     </p>
-                    <button className="bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
-                        Contacter nous
-                    </button>
+                    <a href="/contact/devenir-partenaire" className="inline-block bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium">
+                        Contactez-nous
+                    </a>
                 </div>
             </section>
 
