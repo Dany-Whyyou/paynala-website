@@ -4,26 +4,29 @@ export default function Footer() {
     return (
         <footer className="bg-gray-50 border-t border-gray-200 py-12 px-4">
             <div className="max-w-6xl mx-auto">
-                <div className="grid md:grid-cols-5 gap-8 mb-8">
+                <div className="grid md:grid-cols-6 gap-8 mb-8">
                     <div>
                         <div className="w-40 h-40 rounded mb-4"><img src="/paynala_logo.png" alt="paynala logo"/></div>
                         <p className="text-[12px] text-gray-600 " style={{fontSize: "12px"}}>
-                            PAYNALA est la plateforme de paiement qui transforme l'Afrique. Solutions d'agrégation, TPE interopérable et Mobile Money pour entreprises et gouvernements.
-                        
+                            PAYNALA est votre partenaire de transformation digitale en Afrique. Solutions de paiement et solutions digitales sur mesure pour entreprises et administrations.
                         </p>
-
-
-
                     </div>
 
                     <div>
-                        <h4 className="font-bold text-gray-900 mb-4">SOLUTIONS</h4>
+                        <h4 className="font-bold text-gray-900 mb-4">PAIEMENT</h4>
                         <ul className="space-y-2 text-sm text-gray-600">
-                            <li><a href="#" className="hover:text-gray-900">Agrégation de Paiements</a></li>
-                            <li><a href="#" className="hover:text-gray-900">Intégration Mobile Money</a></li>
-                            <li><a href="#" className="hover:text-gray-900">Terminaux de Paiement (TPE)</a></li>
-                            <li><a href="#" className="hover:text-gray-900">APIs Développeurs</a></li>
-                            <li><a href="#" className="hover:text-gray-900">Tableau de bord</a></li>
+                            <li><a href="/solutions/agregation-de-paiements" className="hover:text-gray-900">Agrégation de Paiements</a></li>
+                            <li><a href="/solutions/integration-mobile-money" className="hover:text-gray-900">Intégration Mobile Money</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-bold text-gray-900 mb-4">DIGITAL</h4>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                            <li><a href="/solutions-digitales" className="hover:text-gray-900">Développement Web & Mobile</a></li>
+                            <li><a href="/solutions-digitales" className="hover:text-gray-900">Systèmes de Gestion</a></li>
+                            <li><a href="/solutions-digitales" className="hover:text-gray-900">Digitalisation de Processus</a></li>
+                            <li><a href="/solutions-digitales" className="hover:text-gray-900">Accompagnement</a></li>
                         </ul>
                     </div>
 

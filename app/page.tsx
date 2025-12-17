@@ -2,7 +2,11 @@
 import {
     Globe,
     Smartphone,
-    CreditCard
+    CreditCard,
+    Code,
+    Building2,
+    RefreshCw,
+    Lightbulb
 } from 'lucide-react';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -162,18 +166,12 @@ export default function Home() {
                         Accélérez votre transformation <br className="hidden sm:block"/>digitale avec PAYNALA
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 md:mb-8 max-w-3xl mx-auto drop-shadow-md">
-                        PAYNALA simplifie radicalement la digitalisation des paiements pour les entreprises et
-                        gouvernements africains. Agrégation multi-opérateurs, TPE interopérable et intégration mobile
-                        money en 48 heures.
+                        Du paiement digital aux solutions sur mesure, nous transformons vos ambitions en réalité.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-                        <button className="bg-red-600 text-white px-6 sm:px-8 py-3 rounded-md hover:bg-red-700 font-medium transition-colors shadow-lg">
+                        <a href="#solutions" className="bg-red-600 text-white px-6 sm:px-8 py-3 rounded-md hover:bg-red-700 font-medium transition-colors shadow-lg">
                             Découvrir nos solutions
-                        </button>
-                        {/*<button
-                            className="bg-white/15 backdrop-blur-sm border-2 border-white text-white px-6 sm:px-8 py-3 rounded-md hover:bg-white/25 font-medium transition-colors shadow-lg">
-                            Contacter les ventes
-                        </button>*/}
+                        </a>
                     </div>
                 </div>
             </section>
@@ -325,7 +323,7 @@ export default function Home() {
             </section>
 
             {/* Solutions Section */}
-            <section className="py-20 px-4 bg-white">
+            <section id="solutions" className="py-20 px-4 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -571,6 +569,64 @@ export default function Home() {
                             <div>
                                 <div className="text-3xl md:text-4xl font-bold text-red-500 mb-2">48h-2 sem</div>
                                 <div className="text-sm text-gray-400">Temps de déploiement</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Section Au-delà du paiement - Solutions Digitales */}
+            <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800">
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        {/* Texte à gauche */}
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                                Au-delà du paiement, nous transformons votre digital
+                            </h2>
+                            <p className="text-gray-300 text-lg mb-8">
+                                Nous développons les plateformes, systèmes et workflows qui accélèrent votre transformation digitale.
+                            </p>
+                            <a
+                                href="/solutions-digitales"
+                                className="inline-block bg-red-600 text-white px-8 py-3 rounded-md hover:bg-red-700 font-medium transition-colors"
+                            >
+                                Découvrir nos solutions digitales
+                            </a>
+                        </div>
+
+                        {/* Cartes à droite */}
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
+                                <div className="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-4">
+                                    <Code className="w-6 h-6 text-red-400" />
+                                </div>
+                                <h3 className="text-white font-bold mb-2">Développement Web & Mobile</h3>
+                                <p className="text-gray-400 text-sm">Applications sur mesure adaptées à vos besoins</p>
+                            </div>
+
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
+                                <div className="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-4">
+                                    <Building2 className="w-6 h-6 text-red-400" />
+                                </div>
+                                <h3 className="text-white font-bold mb-2">Systèmes de Gestion (ERP/CRM)</h3>
+                                <p className="text-gray-400 text-sm">Solutions complètes pour piloter votre organisation</p>
+                            </div>
+
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
+                                <div className="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-4">
+                                    <RefreshCw className="w-6 h-6 text-red-400" />
+                                </div>
+                                <h3 className="text-white font-bold mb-2">Digitalisation de Processus</h3>
+                                <p className="text-gray-400 text-sm">Automatisation de vos workflows métier</p>
+                            </div>
+
+                            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/15 transition-colors">
+                                <div className="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-4">
+                                    <Lightbulb className="w-6 h-6 text-red-400" />
+                                </div>
+                                <h3 className="text-white font-bold mb-2">Accompagnement & Consulting</h3>
+                                <p className="text-gray-400 text-sm">Stratégie et conseil pour votre transformation</p>
                             </div>
                         </div>
                     </div>

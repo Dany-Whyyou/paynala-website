@@ -106,7 +106,17 @@ button, .btn {
   object-position: center;
   z-index: 0;
   filter: blur(2px);
-  transform: scale(1.02); /* Évite les bords flous visibles */
+}
+
+/* Mobile: forcer la vidéo à couvrir toute la hauteur */
+@media (max-width: 767px) {
+  .hero-video {
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .hero-overlay {

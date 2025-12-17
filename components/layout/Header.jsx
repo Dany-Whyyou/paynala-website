@@ -9,11 +9,26 @@ export default function Header() {
         { name: 'Accueil', href: '/', items: [] },
         {
             name: 'Solutions',
-            items: [
-                { name: 'Agrégation de Paiements', href: '/solutions/agregation-de-paiements' },
-                /*{ name: 'Terminaux de Paiement (TPE)', href: '/solutions/terminaux-de-paiement' },*/
-                { name: 'Intégration Mobile Money', href: '/solutions/integration-mobile-money' }
-            ]
+            isMegaMenu: true,
+            categories: [
+                {
+                    title: 'Solutions de Paiement',
+                    items: [
+                        { name: 'Agrégation de Paiements', href: '/solutions/agregation-de-paiements' },
+                        { name: 'Intégration Mobile Money', href: '/solutions/integration-mobile-money' }
+                    ]
+                },
+                {
+                    title: 'Solutions Digitales',
+                    items: [
+                        { name: 'Développement Web & Mobile', href: '/solutions-digitales#expertises' },
+                        { name: 'Systèmes de Gestion (ERP/CRM)', href: '/solutions-digitales#expertises' },
+                        { name: 'Digitalisation de Processus', href: '/solutions-digitales#expertises' },
+                        { name: 'Accompagnement & Consulting', href: '/solutions-digitales#expertises' }
+                    ]
+                }
+            ],
+            items: []
         },
         {
             name: 'Secteurs',
@@ -101,11 +116,17 @@ export default function Header() {
               }
 
               .menu-group:nth-child(1) .dropdown-menu { left: calc(50% - 450px); }
-              .menu-group:nth-child(2) .dropdown-menu { left: calc(50% - 240px); }
+              .menu-group:nth-child(2) .dropdown-menu.mega-menu { left: calc(50% - 350px); }
+              .menu-group:nth-child(2) .dropdown-menu:not(.mega-menu) { left: calc(50% - 240px); }
               .menu-group:nth-child(3) .dropdown-menu { left: calc(50% - 130px); }
               .menu-group:nth-child(4) .dropdown-menu { left: calc(50% - 23px); }
               .menu-group:nth-child(5) .dropdown-menu { left: calc(50% + 95px); }
               .menu-group:nth-child(6) .dropdown-menu { left: calc(50% + 222px); }
+
+              .mega-menu {
+                width: auto !important;
+                min-width: 450px;
+              }
 
               /* Mobile menu animation */
               .mobile-menu {
@@ -146,7 +167,35 @@ export default function Header() {
                         <nav className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 space-x-1">
                             {menuItems.map((menu) => (
                                 <div key={menu.name} className="menu-group">
-                                    {menu.items.length > 0 ? (
+                                    {menu.isMegaMenu ? (
+                                        <>
+                                            <button className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-50 flex items-center space-x-1 text-[14px] capitalize font-medium">
+                                                <span className="text-[14px]">{menu.name}</span>
+                                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                </svg>
+                                            </button>
+
+                                            <div className="dropdown-menu mega-menu bg-white rounded-lg shadow-xl border border-gray-200 py-4 px-2">
+                                                <div className="flex gap-6">
+                                                    {menu.categories.map((category) => (
+                                                        <div key={category.title} className="min-w-[200px]">
+                                                            <h4 className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">{category.title}</h4>
+                                                            {category.items.map((item) => (
+                                                                <a
+                                                                    key={item.name}
+                                                                    href={item.href}
+                                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors rounded-md"
+                                                                >
+                                                                    {item.name}
+                                                                </a>
+                                                            ))}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </>
+                                    ) : menu.items.length > 0 ? (
                                         <>
                                             <button className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-50 flex items-center space-x-1 text-[14px] capitalize font-medium">
                                                 <span className="text-[14px]">{menu.name}</span>
@@ -215,7 +264,43 @@ export default function Header() {
                     <div className="px-4 py-3 space-y-1">
                         {menuItems.map((menu) => (
                             <div key={menu.name}>
-                                {menu.items.length > 0 ? (
+                                {menu.isMegaMenu ? (
+                                    <>
+                                        <button
+                                            onClick={() => toggleSubmenu(menu.name)}
+                                            className="w-full flex items-center justify-between px-3 py-3 text-gray-700 hover:bg-gray-50 rounded-md transition-colors"
+                                        >
+                                            <span className="text-[15px] font-medium">{menu.name}</span>
+                                            <svg
+                                                className={`w-4 h-4 transition-transform ${openSubmenu === menu.name ? 'rotate-180' : ''}`}
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                        <div className={`mobile-submenu ${openSubmenu === menu.name ? 'open' : ''}`}>
+                                            <div className="pl-4 space-y-1 py-2">
+                                                {menu.categories.map((category) => (
+                                                    <div key={category.title} className="mb-3">
+                                                        <h4 className="px-3 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">{category.title}</h4>
+                                                        {category.items.map((item) => (
+                                                            <a
+                                                                key={item.name}
+                                                                href={item.href}
+                                                                className="block px-3 py-2 text-[14px] text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors"
+                                                                onClick={() => setMobileMenuOpen(false)}
+                                                            >
+                                                                {item.name}
+                                                            </a>
+                                                        ))}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : menu.items.length > 0 ? (
                                     <>
                                         <button
                                             onClick={() => toggleSubmenu(menu.name)}
