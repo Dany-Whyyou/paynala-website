@@ -13,6 +13,9 @@ export default function DevenirPartenairePage() {
         typePartenariat: '',
         message: ''
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const avantages = [
         {
@@ -80,9 +83,45 @@ export default function DevenirPartenairePage() {
         }));
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+        setErrorMessage('');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    type: 'partenaire',
+                    ...formData,
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setSubmitStatus('success');
+                setFormData({
+                    nom: '',
+                    nomComplet: '',
+                    email: '',
+                    typePartenariat: '',
+                    message: ''
+                });
+            } else {
+                setSubmitStatus('error');
+                setErrorMessage(result.error || 'Une erreur est survenue');
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+            setErrorMessage('Erreur de connexion. Veuillez réessayer.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -290,12 +329,56 @@ export default function DevenirPartenairePage() {
                             ></textarea>
                         </div>
 
+                        {/* Messages de statut */}
+                        {submitStatus === 'success' && (
+                            <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                                <div className="flex items-center">
+                                    <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                                    </svg>
+                                    <div>
+                                        <p className="text-green-800 font-medium">Demande envoyée avec succès !</p>
+                                        <p className="text-green-600 text-sm">Notre équipe vous contactera dans les plus brefs délais.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {submitStatus === 'error' && (
+                            <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                                <div className="flex items-center">
+                                    <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
+                                    </svg>
+                                    <div>
+                                        <p className="text-red-800 font-medium">Erreur lors de l'envoi</p>
+                                        <p className="text-red-600 text-sm">{errorMessage}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-red-600 text-white py-4 rounded-lg hover:bg-red-700 transition-colors font-medium text-lg"
+                            disabled={isSubmitting}
+                            className={`w-full py-4 rounded-lg font-medium text-lg transition-colors flex items-center justify-center ${
+                                isSubmitting
+                                    ? 'bg-gray-400 cursor-not-allowed'
+                                    : 'bg-red-600 hover:bg-red-700 text-white'
+                            }`}
                         >
-                            Envoyer la demande
+                            {isSubmitting ? (
+                                <>
+                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Envoi en cours...
+                                </>
+                            ) : (
+                                'Envoyer la demande'
+                            )}
                         </button>
                     </form>
                 </div>

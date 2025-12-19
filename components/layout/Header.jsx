@@ -45,18 +45,18 @@ export default function Header() {
             name: 'Entreprise',
             items: [
                 { name: 'À propos', href: '/entreprise/a-propos' },
-                { name: 'Notre équipe', href: '/entreprise/notre-equipe' },
+                /*{ name: 'Notre équipe', href: '/entreprise/notre-equipe' },*/
                 { name: 'Nos valeurs', href: '/entreprise/nos-valeurs' },
-                { name: 'Carrières', href: '/entreprise/carrieres' }
+                /*{ name: 'Carrières', href: '/entreprise/carrieres' }*/
             ]
         },
         {
             name: 'Ressources',
             items: [
                 { name: "Centre d'aide", href: '/ressources/centre-aide' },
-                { name: 'Documentation API', href: '/ressources/documentation-api' },
+                /*{ name: 'Documentation API', href: '/ressources/documentation-api' },
                 { name: 'Blog', href: '/ressources/blog' },
-                { name: 'Études de cas', href: '/ressources/etudes-de-cas' }
+                { name: 'Études de cas', href: '/ressources/etudes-de-cas' }*/
             ]
         },
         {

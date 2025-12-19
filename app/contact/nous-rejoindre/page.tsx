@@ -21,6 +21,9 @@ export default function ContactPage() {
         message: '',
         cv: null
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<{ name: string; value: string }>) => {
         const { name, value } = e.target;
@@ -40,10 +43,76 @@ export default function ContactPage() {
         }));
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    // Convertir le fichier en base64
+    const fileToBase64 = (file: File): Promise<string> => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                const result = reader.result as string;
+                // Retirer le préfixe data:...;base64,
+                const base64 = result.split(',')[1];
+                resolve(base64);
+            };
+            reader.onerror = error => reject(error);
+        });
+    };
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Ajoutez ici votre logique de soumission
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+        setErrorMessage('');
+
+        try {
+            // Préparer les données avec le CV en base64 si présent
+            let cvData = {};
+            if (formData.cv) {
+                const cvBase64 = await fileToBase64(formData.cv);
+                cvData = {
+                    cvFileName: formData.cv.name,
+                    cvBase64: cvBase64,
+                };
+            }
+
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    type: 'candidature',
+                    prenom: formData.prenom,
+                    nom: formData.nom,
+                    email: formData.email,
+                    poste: formData.poste,
+                    message: formData.message,
+                    ...cvData,
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setSubmitStatus('success');
+                setFormData({
+                    prenom: '',
+                    nom: '',
+                    email: '',
+                    poste: '',
+                    message: '',
+                    cv: null
+                });
+            } else {
+                setSubmitStatus('error');
+                setErrorMessage(result.error || 'Une erreur est survenue');
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+            setErrorMessage('Erreur de connexion. Veuillez réessayer.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -185,21 +254,65 @@ export default function ContactPage() {
                             </div>
                         </div>
 
+                        {/* Messages de statut */}
+                        {submitStatus === 'success' && (
+                            <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                                <div className="flex items-center">
+                                    <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                                    </svg>
+                                    <div>
+                                        <p className="text-green-800 font-medium">Candidature envoyée avec succès !</p>
+                                        <p className="text-green-600 text-sm">Nous examinerons votre profil et vous recontacterons.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {submitStatus === 'error' && (
+                            <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                                <div className="flex items-center">
+                                    <svg className="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
+                                    </svg>
+                                    <div>
+                                        <p className="text-red-800 font-medium">Erreur lors de l'envoi</p>
+                                        <p className="text-red-600 text-sm">{errorMessage}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-red-600 text-white py-4 rounded-lg hover:bg-red-700 transition-colors font-medium text-lg"
+                            disabled={isSubmitting}
+                            className={`w-full py-4 rounded-lg font-medium text-lg transition-colors flex items-center justify-center ${
+                                isSubmitting
+                                    ? 'bg-gray-400 cursor-not-allowed'
+                                    : 'bg-red-600 hover:bg-red-700 text-white'
+                            }`}
                         >
-                            Envoyer ma candidature
+                            {isSubmitting ? (
+                                <>
+                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Envoi en cours...
+                                </>
+                            ) : (
+                                'Envoyer ma candidature'
+                            )}
                         </button>
 
                         {/* Alternative Link */}
-                        <p className="text-center text-gray-600">
+                        {/*<p className="text-center text-gray-600">
                             Vous cherchez un poste spécifique ?{' '}
                             <Link href="/carrieres" className="text-red-600 hover:text-red-700 font-medium">
                                 Consultez nos offres d'emploi.
                             </Link>
-                        </p>
+                        </p>*/}
                     </form>
                 </div>
             </main>
