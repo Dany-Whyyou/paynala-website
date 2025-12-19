@@ -11,6 +11,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "PAYNALA - Solutions de paiement digitales pour l'Afrique",
   description: "PAYNALA simplifie la digitalisation des paiements pour les entreprises et gouvernements africains. Agrégation multi-opérateurs, TPE interopérable et intégration mobile money.",
+  icons: {
+    icon: "/paynala_logo_sans.png",
+    shortcut: "/paynala_logo_sans.png",
+    apple: "/paynala_logo_sans.png",
+  },
 };
 
 export default function RootLayout({
