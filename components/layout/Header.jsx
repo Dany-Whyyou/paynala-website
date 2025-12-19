@@ -1,9 +1,45 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [openSubmenu, setOpenSubmenu] = useState(null);
+    const [activeDropdown, setActiveDropdown] = useState(null);
+    const [isHydrated, setIsHydrated] = useState(false);
+    const closeTimeoutRef = useRef(null);
+
+    // Empêcher le flash des sous-menus au chargement
+    useEffect(() => {
+        // Délai pour s'assurer que le CSS est chargé avant d'afficher les dropdowns
+        const timer = setTimeout(() => {
+            setIsHydrated(true);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
+
+    // Nettoyer le timeout au démontage
+    useEffect(() => {
+        return () => {
+            if (closeTimeoutRef.current) {
+                clearTimeout(closeTimeoutRef.current);
+            }
+        };
+    }, []);
+
+    // Gérer l'ouverture/fermeture des dropdowns avec délai
+    const handleMouseEnter = (menuName) => {
+        if (closeTimeoutRef.current) {
+            clearTimeout(closeTimeoutRef.current);
+            closeTimeoutRef.current = null;
+        }
+        setActiveDropdown(menuName);
+    };
+
+    const handleMouseLeave = () => {
+        closeTimeoutRef.current = setTimeout(() => {
+            setActiveDropdown(null);
+        }, 200); // Délai de 200ms avant fermeture
+    };
 
     const menuItems = [
         { name: 'Accueil', href: '/', items: [] },
@@ -80,35 +116,23 @@ export default function Header() {
                 position: static;
               }
 
+              /* Cacher complètement les dropdowns avant l'hydratation */
+              .dropdown-menu.not-ready {
+                display: none !important;
+              }
+
               .dropdown-menu {
                 position: fixed;
-                top: 3rem;
+                top: 4rem;
                 opacity: 0;
                 visibility: hidden;
                 transform: translateY(-10px);
-                transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+                transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
                 z-index: 9999;
-              }
-
-              /* Pont invisible entre le bouton et le menu */
-              .menu-group::before {
-                content: '';
-                position: fixed;
-                top: 3rem;
-                height: 2rem;
-                width: 100%;
-                left: 0;
-                right: 0;
                 pointer-events: none;
-                z-index: 9998;
               }
 
-              .menu-group:hover::before {
-                pointer-events: auto;
-              }
-
-              .menu-group:hover .dropdown-menu,
-              .dropdown-menu:hover {
+              .dropdown-menu.active {
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0);
@@ -166,7 +190,12 @@ export default function Header() {
                         {/* Desktop Navigation */}
                         <nav className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 space-x-1">
                             {menuItems.map((menu) => (
-                                <div key={menu.name} className="menu-group">
+                                <div
+                                    key={menu.name}
+                                    className="menu-group"
+                                    onMouseEnter={() => isHydrated && handleMouseEnter(menu.name)}
+                                    onMouseLeave={handleMouseLeave}
+                                >
                                     {menu.isMegaMenu ? (
                                         <>
                                             <button className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-50 flex items-center space-x-1 text-[14px] capitalize font-medium">
@@ -176,7 +205,11 @@ export default function Header() {
                                                 </svg>
                                             </button>
 
-                                            <div className="dropdown-menu mega-menu bg-white rounded-lg shadow-xl border border-gray-200 py-4 px-2">
+                                            <div
+                                                className={`dropdown-menu mega-menu bg-white rounded-lg shadow-xl border border-gray-200 py-4 px-2 ${activeDropdown === menu.name ? 'active' : ''} ${!isHydrated ? 'not-ready' : ''}`}
+                                                onMouseEnter={() => handleMouseEnter(menu.name)}
+                                                onMouseLeave={handleMouseLeave}
+                                            >
                                                 <div className="flex gap-6">
                                                     {menu.categories.map((category) => (
                                                         <div key={category.title} className="min-w-[200px]">
@@ -204,7 +237,11 @@ export default function Header() {
                                                 </svg>
                                             </button>
 
-                                            <div className="dropdown-menu w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
+                                            <div
+                                                className={`dropdown-menu w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 ${activeDropdown === menu.name ? 'active' : ''} ${!isHydrated ? 'not-ready' : ''}`}
+                                                onMouseEnter={() => handleMouseEnter(menu.name)}
+                                                onMouseLeave={handleMouseLeave}
+                                            >
                                                 {menu.items.map((item) => (
                                                     <a
                                                         key={item.name}

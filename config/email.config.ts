@@ -15,6 +15,7 @@ export const emailConfig = {
     partenaire: {
         recipients: [
             'contact@paynala.com',
+            'daniel.doviakon@gmail.com'
             // Ajoutez d'autres emails ici si nécessaire
             // 'partenariats@paynala.com',
         ],
@@ -25,6 +26,7 @@ export const emailConfig = {
     demo: {
         recipients: [
             'contact@paynala.com',
+            'daniel.doviakon@gmail.com'
             // 'commercial@paynala.com',
         ],
         subject: 'Nouvelle demande de démo - PAYNALA',
@@ -34,6 +36,7 @@ export const emailConfig = {
     candidature: {
         recipients: [
             'contact@paynala.com',
+            'daniel.doviakon@gmail.com'
             // 'rh@paynala.com',
         ],
         subject: 'Nouvelle candidature - PAYNALA',
