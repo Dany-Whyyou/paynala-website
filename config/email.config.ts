@@ -51,7 +51,7 @@ export const emailConfig = {
         secure: process.env.SMTP_SECURE === 'true', // true pour 465, false pour autres ports
         auth: {
             user: process.env.SMTP_USER || 'paynalag@gmail.com',
-            pass: process.env.SMTP_PASS || 'vmbljlhqmxsfewlcy',
+            pass: process.env.SMTP_PASS || 'vpxvkyufajipzwzb',
         },
     },
 
