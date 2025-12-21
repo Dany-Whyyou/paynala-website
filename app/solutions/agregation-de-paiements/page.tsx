@@ -24,8 +24,8 @@ export default function AgregationDePaiementsPage() {
         {/* Hero Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
-              Agrégation de Paiements Multi-Opérateurs
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Agrégation de paiements multi-opérateurs
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Intégrez tous les moyens de paiement africains via une seule API. Déploiement rapide, sans développement complexe.

@@ -136,8 +136,8 @@ export default function AProposPage() {
                         {/* Content */}
                         <div className="relative z-20 h-full flex items-center px-8 md:px-16">
                             <div className="max-w-2xl">
-                                <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
-                                    Notre Mission : Révolutionner les paiements en Afrique
+                                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                                    Notre mission : révolutionner les paiements en Afrique
                                 </h1>
                                 <p className="text-xl text-gray-200 leading-relaxed">
                                     PAYNALA se focalise sur la contribution apportée à l'essor économique du continent

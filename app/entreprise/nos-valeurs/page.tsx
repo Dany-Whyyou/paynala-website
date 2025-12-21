@@ -60,7 +60,7 @@ export default function NosValeursPage() {
             {/* Hero Section */}
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-5xl font-bold text-gray-900 mb-6">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                         Les principes qui nous guident
                     </h1>
                     <p className="text-lg text-gray-600 leading-relaxed">

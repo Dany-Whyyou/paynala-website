@@ -218,7 +218,7 @@ export default function CentreAidePage() {
             {/* Hero Section with Search */}
             <section className="relative bg-gradient-to-br from-gray-800 via-gray-700 to-red-900 py-20 md:py-28">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                         Centre d'aide PAYNALA
                     </h1>
                     <p className="text-lg text-gray-200 mb-10">

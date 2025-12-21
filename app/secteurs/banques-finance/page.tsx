@@ -28,7 +28,7 @@ export default function BanqueFinancePage() {
 
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
                     <div className="max-w-3xl">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                             Solutions de paiement pour le<br />
                             secteur bancaire et financier
                         </h1>

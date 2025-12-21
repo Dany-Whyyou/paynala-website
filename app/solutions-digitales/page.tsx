@@ -40,7 +40,7 @@ export default function SolutionsDigitalesPage() {
       {/* Hero Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Transformez votre organisation avec des solutions digitales sur mesure
           </h1>
           <p className="text-xl text-gray-300 mb-8">

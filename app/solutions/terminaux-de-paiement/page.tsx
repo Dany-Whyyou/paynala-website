@@ -14,7 +14,7 @@ export default function TerminalsPage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                                 Un terminal unique pour tous vos paiements
                             </h1>
                             <p className="text-lg text-gray-600 mb-8">

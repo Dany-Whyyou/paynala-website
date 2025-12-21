@@ -87,7 +87,7 @@ export default function NotreEquipePage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Content */}
                         <div>
-                            <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                                 Les experts qui transforment le paiement en Afrique
                             </h1>
                             <p className="text-lg text-gray-600 leading-relaxed">

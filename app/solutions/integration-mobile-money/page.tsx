@@ -13,8 +13,8 @@ export default function MobileMoneyPage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                                Intégration Mobile Money en 48 heures
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                                Intégration mobile money en 48 heures
                             </h1>
                             <p className="text-lg text-gray-600 mb-8">
                                 Acceptez tous les opérateurs (Airtel Money, Moov Money...) via USSD et applications mobiles. Accès à plusieurs millions utilisateurs. Commission négociée.

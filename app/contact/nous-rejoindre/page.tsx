@@ -125,7 +125,7 @@ export default function ContactPage() {
                 <div className="max-w-2xl mx-auto">
                     {/* Title Section */}
                     <div className="text-center mb-12">
-                        <h1 className="text-5xl font-bold text-gray-900 mb-4">
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                             Rejoignez l'aventure PAYNALA
                         </h1>
                         <p className="text-lg text-gray-600">

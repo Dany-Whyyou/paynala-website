@@ -190,8 +190,8 @@ export default function APIDocumentationPage() {
                 {/* Page Content */}
                 <div className="px-8 py-12 max-w-5xl">
                     {/* Title */}
-                    <h1 className="text-4xl font-bold text-gray-900 mb-3">
-                        Create a Payment
+                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                        Create a payment
                     </h1>
                     <p className="text-lg text-red-600 mb-12">
                         This endpoint creates a new payment object.

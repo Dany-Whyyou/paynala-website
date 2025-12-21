@@ -134,7 +134,7 @@ export default function DevenirPartenairePage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                                 Devenons partenaires pour façonner l'avenir du paiement en Afrique.
                             </h1>
                             <p className="text-lg text-gray-600">

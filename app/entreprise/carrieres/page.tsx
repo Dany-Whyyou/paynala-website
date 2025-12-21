@@ -128,7 +128,7 @@ export default function CarrieresPage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Content */}
                         <div>
-                            <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                                 Rejoignez l'équipe qui construit l'avenir des paiements en Afrique
                             </h1>
                             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
